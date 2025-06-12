@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Run Current Ruby File",
+    "command": "sh",
+    "args": ["-c", "ruby \"$ZED_FILE\" && echo '\\n✓ Execution completed successfully. Press any key to close...' && read -n 1 && exit"],
+    "env": {},
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  },
+  {
+    "label": "Run Current File (Generic)",
+    "command": "sh",
+    "args": ["-c", "case \"$ZED_FILE\" in *.rb) ruby \"$ZED_FILE\" ;; *.py) python3 \"$ZED_FILE\" ;; *.js) node \"$ZED_FILE\" ;; *.ts) npx ts-node \"$ZED_FILE\" ;; *) echo \"Unsupported file type: $ZED_FILE\" ;; esac"],
+    "env": {},
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "reveal": "always"
+  }
+]
